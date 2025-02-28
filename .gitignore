@@ -1,0 +1,48 @@
+# 🔹 공통적으로 무시할 파일들
+.DS_Store
+.vscode/
+*.log
+*.env
+
+# 🔹 React 프론트엔드 관련 무시 파일
+frontend/node_modules/
+frontend/.pnp/
+frontend/.pnp.js
+frontend/coverage/
+frontend/build/
+frontend/.DS_Store
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# 🔹 Spring Boot 백엔드 관련 무시 파일
+todo-calendar-backend/.gradle/
+todo-calendar-backend/build/
+
+# STS (Spring Tool Suite)
+todo-calendar-backend/.apt_generated
+todo-calendar-backend/.classpath
+todo-calendar-backend/.factorypath
+todo-calendar-backend/.project
+todo-calendar-backend/.settings
+todo-calendar-backend/.springBeans
+todo-calendar-backend/.sts4-cache
+todo-calendar-backend/bin/
+
+# IntelliJ IDEA
+todo-calendar-backend/.idea/
+todo-calendar-backend/*.iws
+todo-calendar-backend/*.iml
+todo-calendar-backend/*.ipr
+todo-calendar-backend/out/
+
+# NetBeans
+todo-calendar-backend/nbproject/private/
+todo-calendar-backend/nbbuild/
+todo-calendar-backend/dist/
+todo-calendar-backend/nbdist/
+todo-calendar-backend/.nb-gradle/
