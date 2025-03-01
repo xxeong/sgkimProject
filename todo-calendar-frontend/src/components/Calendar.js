@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Calendar, Badge } from "antd";
 
 const MyCalendar = () => {
-  const [tasks, setTasks] = useState({
+  const [tasks] = useState({
     "2025-03-01": [{ text: "회의", type: "warning" }],
     "2025-03-05": [{ text: "프로젝트 마감", type: "error" }],
   });

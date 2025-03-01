@@ -5,19 +5,19 @@
 *.env
 
 # 🔹 React 프론트엔드 관련 무시 파일
-frontend/node_modules/
-frontend/.pnp/
-frontend/.pnp.js
-frontend/coverage/
-frontend/build/
-frontend/.DS_Store
-frontend/.env.local
-frontend/.env.development.local
-frontend/.env.test.local
-frontend/.env.production.local
-frontend/npm-debug.log*
-frontend/yarn-debug.log*
-frontend/yarn-error.log*
+todo-calendar-frontend/node_modules/
+todo-calendar-frontend/.pnp/
+todo-calendar-frontend/.pnp.js
+todo-calendar-frontend/coverage/
+todo-calendar-frontend/build/
+todo-calendar-frontend/.DS_Store
+todo-calendar-frontend/.env.local
+todo-calendar-frontend/.env.development.local
+todo-calendar-frontend/.env.test.local
+todo-calendar-frontend/.env.production.local
+todo-calendar-frontend/npm-debug.log*
+todo-calendar-frontend/yarn-debug.log*
+todo-calendar-frontend/yarn-error.log*
 
 # 🔹 Spring Boot 백엔드 관련 무시 파일
 todo-calendar-backend/.gradle/

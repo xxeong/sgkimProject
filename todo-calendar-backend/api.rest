@@ -2,6 +2,15 @@
 GET http://localhost:8080/api/todo/List
 content-type: application/json
 
+###
+GET http://localhost:8080/api/todo/1
+
+###
+POST http://localhost:8080/api/todo/add
+content-type: application/json
+
 {
-    
+    "title": "Test입니다~",
+    "description": "Test 할 일입니다.",
+    "status": "PENDING"
 }
