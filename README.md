@@ -38,6 +38,11 @@ React.js(프론트엔드)와 Spring Boot(백엔드)를 사용하여 구현되었
 ### 1. DB생성
 - **1. DB.sql실행(기초데이터포함)**<br>
 **경로는 docs폴더**
+
+```
+mysql -u root -p < /파일이_저장된_경로/DB.sql
+```
+
 <br>
 
 - **2. SpringBoot의 application.properties의 # MySQL 연결 정보 확인.**
