@@ -17,10 +17,10 @@ import lombok.Getter;
 public abstract class BaseEntity {
 
     @CreatedDate
-    @Column(updatable = false) // 생성일이 업데이트 될 때 변경되지 않도록 설정
-    private LocalDateTime create_date_Time;
-    
-    @LastModifiedDate
-    private LocalDateTime update_date_time;
+    @Column(name = "create_date_time", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP", updatable = false)// 생성일이 업데이트 될 때 변경되지 않도록 설정
+    private LocalDateTime createDateTime;
 
+    @LastModifiedDate
+    @Column(name = "update_date_time", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
+    private LocalDateTime updateDateTime;
 }

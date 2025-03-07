@@ -68,7 +68,7 @@ content-type: application/json
     "location":"회의실B"
 }
 
-###
+### 여기서 뭐를 받아서 수정할지 고민사항.
 # PATCH http://localhost:8080/api/event/1
 # content-type: application/json
 
@@ -120,3 +120,4 @@ content-type: application/json
     ]
 
 }
+
