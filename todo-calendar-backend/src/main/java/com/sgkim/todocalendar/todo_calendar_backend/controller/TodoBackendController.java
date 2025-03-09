@@ -151,7 +151,7 @@ public class TodoBackendController {
     }
 
     // (추가기능) 메일보내기
-    @Operation(summary = "할 일(TODO) 메일 공유", description = "이메일(Email)을 받아서 메일 전송.")
+    @Operation(summary = "할 일(TODO) 메일 공유", description = "이메일(Email)을 받아서 해당 메일로 전송.")
     @PostMapping("/share/mail")
     public ResponseEntity<String> shareTodo(@RequestBody ShareRequestDto request) {
         List<Long> todoIds = request.getTodoIds();

@@ -39,11 +39,11 @@ CREATE TABLE todo (
 
 -- ToDo 테스트 데이터 삽입
 INSERT INTO todo (id, title, due_date, status) VALUES
-(1, 'React 공부하기', '2025-03-20', 'Y'),
-(2, 'DB 설계 검토', '2025-03-21', 'N'),
-(3, '백엔드 API 구현', '2025-03-22', 'Y'),
-(4, 'JPA 테스트 코드 작성', '2025-03-23', 'Y'),
-(5, 'Ant Design UI 디자인', '2025-03-24', 'N');
+(1, 'React 공부하기', DATE_SUB(CURDATE(), INTERVAL 1 DAY), 'N'),
+(2, 'DB 설계 검토', CURDATE(), 'N'),
+(3, '백엔드 API 구현', DATE_ADD(CURDATE(), INTERVAL 1 DAY), 'N'),
+(4, 'JPA 테스트 코드 작성', DATE_ADD(CURDATE(), INTERVAL 2 DAY), 'Y'),
+(5, 'Ant Design UI 디자인', DATE_SUB(CURDATE(), INTERVAL 3 DAY), 'N');
 
 -- ToDo Descriptions 테이블 생성
 CREATE TABLE todo_descriptions (
@@ -77,3 +77,10 @@ CREATE TABLE `event` (
   `update_date_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `event` (title, description, start_date_time, end_date_time, location)
+VALUES
+('팀 회의', '프로젝트 진행 상황 공유', DATE_SUB(NOW(), INTERVAL 1 DAY), DATE_SUB(NOW(), INTERVAL 1 DAY) + INTERVAL 2 HOUR, '사무실'),
+('프로젝트 미팅', 'Spring Boot와 JPA 미팅', NOW(), NOW() + INTERVAL 2 HOUR, '온라인 Zoom'),
+('개발 스프린트', '프론트엔드 개발 집중 작업', DATE_ADD(NOW(), INTERVAL 3 DAY), DATE_ADD(NOW(), INTERVAL 3 DAY) + INTERVAL 4 HOUR, '본사 2층 회의실'),
+('데이터베이스 점검', '서버 성능 최적화 및 점검', DATE_SUB(NOW(), INTERVAL 2 DAY), DATE_SUB(NOW(), INTERVAL 2 DAY) + INTERVAL 3 HOUR, '본사 1층');

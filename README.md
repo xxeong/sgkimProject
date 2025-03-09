@@ -10,7 +10,10 @@ React.js(프론트엔드)와 Spring Boot(백엔드)를 사용하여 구현되었
 ## 🚀 프로젝트 개요
 ### 📌 주요 기능
 - ✅ **할 일 관리**: To-Do 항목 추가, 수정, 삭제, 완료 처리
-    - **할 일 메일 공유 기능 (Microsoft Graph API 이용, 백엔드의 환경변수에서 메일 발송 정보 관리)**
+    - **할 일 메일 공유 기능**
+      - Microsoft Graph API 이용
+      - 백엔드의 ".env 및 application.properties"에서 메일 발송 정보 관리
+      - 현재 메일 샌더는 설정 테넌트에 존재하는 사용자만 가능<br>(application.properties에 본인 계정으로 설정해놓았음).
 - 🔔 **알림 기능**: 마감 임박 및 지연된 항목 표시
 - 📌 **정렬 및 필터링**: 완료 여부, 마감 기한별 정렬 가능
 - 📄 **API 명세**: Swagger UI 지원
@@ -19,20 +22,25 @@ React.js(프론트엔드)와 Spring Boot(백엔드)를 사용하여 구현되었
 
 ## 🛠️ 기술 스택
 ### 🔹 **프론트엔드**
-- **React.js**	  18.3.1  -	SPA (Single Page Application)
-- **Ant Design**	5.24.2  -	UI 라이브러리 (디자인 컴포넌트)
-- **Axios**	      1.8.1   -	API 요청 처리 (RESTful API 통신)
-- **Day.js**	    1.11.13 -	날짜 및 시간 처리
-
+```
+React.js	    18.3.1  -	SPA (Single Page Application)
+Ant Design	    5.24.2  -	UI 라이브러리 (디자인 컴포넌트)
+Axios	        1.8.1   -	API 요청 처리 (RESTful API 통신)
+Day.js	        1.11.13 -	날짜 및 시간 처리
+```
 ### 🔹 **백엔드**
-- **Spring Boot**	3.4.3   -	Java 기반 백엔드 프레임워크
-- **Spring Web**	        -	REST API 개발 지원
-- **Spring Data JPA**	    -	ORM (객체-관계 매핑)
-- **MySQL**	8.0.33        - 관계형 데이터베이스
-- **Lombok**	            -	코드 간소화 (Getter, Setter 자동 생성)
-- **ModelMapper**	3.1.1   -	DTO ↔ Entity 변환 라이브러리
-- **SpringDoc OpenAPI**	2.7.0 -	Swagger API 문서화
-- **Spring Boot DevTools**	  -	개발 편의성 제공 (자동 리로드)
+```
+Spring Boot	        3.4.3 -	Java 기반 백엔드 프레임워크
+Spring Web	              -	REST API 개발 지원
+Spring Data JPA	          -	ORM (객체-관계 매핑)
+MySQL	            8.0.33- 관계형 데이터베이스
+Lombok	                  -	코드 간소화 (Getter, Setter 자동 생성)
+ModelMapper	        3.1.1 -	DTO ↔ Entity 변환 라이브러리
+SpringDoc OpenAPI	2.7.0 -	Swagger API 문서화
+Spring Boot DevTools	  -	개발 편의성 제공 (자동 리로드)
+Java-Dotenv         5.2.2 - `.env` 파일을 이용한 환경 변수 관리
+```
+
 ---
 ## 실행 가이드
 
@@ -56,7 +64,7 @@ cd c:Program Files\MySQL Server 8.0\bin
 **2. DB.sql 파일 실행(초기 데이터포함)**<br>
 **docs/DB.sql 파일 실행** 
 ```
-mysql -u root -p < "/파일이_저장된_경로/DB.sql"
+mysql -u root -p < "/파일이_저장된_경로/docs/DB.sql"
 ```
 <br>
 
@@ -113,7 +121,7 @@ npm start
 ```
 ---
 
-## API명세
+# API명세
 **Swagger API 문서**: http://localhost:8080/swagger-ui.html
 
 **테스트케이스는 rest파일로 작성**<br>

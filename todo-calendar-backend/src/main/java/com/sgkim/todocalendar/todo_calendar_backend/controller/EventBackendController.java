@@ -43,6 +43,7 @@ public class EventBackendController {
         return ResponseEntity.ok(events);
     }
 
+    @Operation(summary = "일정(Event) 추가", description = "일정을 추가합니다.")
     @PostMapping
     public ResponseEntity<EventDto> addEvent(@RequestBody EventDto event){        
         return ResponseEntity.ok(eventService.addEvent(event));
