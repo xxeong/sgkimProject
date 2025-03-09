@@ -167,7 +167,7 @@ export default function TodoItem({ todo, getTodos }) {
         dayjs(todo.dueDate).startOf("day").diff(dayjs().startOf("day"), "day") === 1;
 
     const isDueAfter = todo.dueDate && todo.status === "N" &&
-        dayjs(todo.dueDate).startOf("day").diff(dayjs().startOf("day"), "day") === -1;
+        dayjs(todo.dueDate).startOf("day").diff(dayjs().startOf("day"), "day") < 0;
 
 
     return (
@@ -259,7 +259,7 @@ export default function TodoItem({ todo, getTodos }) {
                 </Text>
             ) : null}
             <Modal title="할 일 설명" open={isModalOpen} onCancel={() => {
-                handleCancel(); 
+                handleCancel();
                 setEditingDescId(null);
                 setEditingDescText("");
             }}

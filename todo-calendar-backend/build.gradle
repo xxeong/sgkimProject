@@ -37,6 +37,7 @@ dependencies {
 	//ps:기존 Swagger Doc 2.0.2 버전이었는데 @RestControllerAdvice 전역 예외처리를 추가하면 작동이 안됨 그래서 버전업을 하니 해결.
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.7.0' //Swagger Doc 
 	implementation 'org.modelmapper:modelmapper:3.1.1' // Dto <-> Entity자동변환 라이브러리
+	implementation 'io.github.cdimascio:java-dotenv:5.2.2' // .env 파일 자동 로드
 }
 
 tasks.named('test') {

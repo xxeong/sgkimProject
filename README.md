@@ -10,7 +10,7 @@ React.js(프론트엔드)와 Spring Boot(백엔드)를 사용하여 구현되었
 ## 🚀 프로젝트 개요
 ### 📌 주요 기능
 - ✅ **할 일 관리**: To-Do 항목 추가, 수정, 삭제, 완료 처리
-    - **할 일 메일 공유 기능(메일을 보낼때의 값은 백엔드에서 환경변수에 저장되어있고 Microsoft Graph API이용.)**
+    - **할 일 메일 공유 기능 (Microsoft Graph API 이용, 백엔드의 환경변수에서 메일 발송 정보 관리)**
 - 🔔 **알림 기능**: 마감 임박 및 지연된 항목 표시
 - 📌 **정렬 및 필터링**: 완료 여부, 마감 기한별 정렬 가능
 - 📄 **API 명세**: Swagger UI 지원
@@ -19,33 +19,48 @@ React.js(프론트엔드)와 Spring Boot(백엔드)를 사용하여 구현되었
 
 ## 🛠️ 기술 스택
 ### 🔹 **프론트엔드**
-- **React.js**	18.3.1	SPA (Single Page Application)
-- **Ant Design**	5.24.2	UI 라이브러리 (디자인 컴포넌트)
-- **Axios**	1.8.1	API 요청 처리 (RESTful API 통신)
-- **Day.js**	1.11.13	날짜 및 시간 처리
+- **React.js**	  18.3.1  -	SPA (Single Page Application)
+- **Ant Design**	5.24.2  -	UI 라이브러리 (디자인 컴포넌트)
+- **Axios**	      1.8.1   -	API 요청 처리 (RESTful API 통신)
+- **Day.js**	    1.11.13 -	날짜 및 시간 처리
 
 ### 🔹 **백엔드**
-- **Spring Boot**	3.4.3	Java 기반 백엔드 프레임워크
-- **Spring Web**	-	REST API 개발 지원
-- **Spring Data JPA**	-	ORM (객체-관계 매핑)
-- **MySQL**	8.0.33	관계형 데이터베이스
-- **Lombok**	-	코드 간소화 (Getter, Setter 자동 생성)
-- **ModelMapper**	3.1.1	DTO ↔ Entity 변환 라이브러리
-- **SpringDoc OpenAPI**	2.7.0	Swagger API 문서화
-- **Spring Boot DevTools**	-	개발 편의성 제공 (자동 리로드)
+- **Spring Boot**	3.4.3   -	Java 기반 백엔드 프레임워크
+- **Spring Web**	        -	REST API 개발 지원
+- **Spring Data JPA**	    -	ORM (객체-관계 매핑)
+- **MySQL**	8.0.33        - 관계형 데이터베이스
+- **Lombok**	            -	코드 간소화 (Getter, Setter 자동 생성)
+- **ModelMapper**	3.1.1   -	DTO ↔ Entity 변환 라이브러리
+- **SpringDoc OpenAPI**	2.7.0 -	Swagger API 문서화
+- **Spring Boot DevTools**	  -	개발 편의성 제공 (자동 리로드)
 ---
 ## 실행 가이드
-### 1. DB생성
-- **1. DB.sql실행(기초데이터포함)**<br>
-**경로는 docs폴더**
+
+### 실행 전 필수 설치
+**- Java 17 (Spring Boot 실행을 위해 필요)**<br>
+**- Gradle (Spring Boot 프로젝트 빌드를 위해 필요)**<br>
+**- MySQL 8.0 (데이터베이스 사용을 위해 필요)**<br>
+**- Node.js (React 프로젝트 실행을 위해 필요)**
+
+### 1. 데이터베이스 (MySQL) 설정<br>
+
+**(명령 프롬프트 실행)**
+
+**1. MySQL이 설치된 경로로 이동**
 
 ```
-mysql -u root -p < /파일이_저장된_경로/DB.sql
+cd c:Program Files\MySQL Server 8.0\bin
 ```
+**(MySQL이 설치된 경로에 따라 다를 수 있음)**<br>
 
+**2. DB.sql 파일 실행(초기 데이터포함)**<br>
+**docs/DB.sql 파일 실행** 
+```
+mysql -u root -p < "/파일이_저장된_경로/DB.sql"
+```
 <br>
 
-- **2. SpringBoot의 application.properties의 # MySQL 연결 정보 확인.**
+**3. SpringBoot의 application.properties의 # MySQL 연결 정보 확인.**
 ```
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.datasource.url=jdbc:mysql://localhost:3306/planner_db?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
@@ -54,10 +69,18 @@ spring.datasource.password=qhdkscjfwj1!
 ```
 ### 2. 백엔드 
 
-**1. 깃허브에서 프로젝트 파일 다운로드**
-<br><br>
 
-**명령프롬프트 실행**
+**📌 [⚠️ 필수] .env 파일 설정**
+
+**todo-calendar-backend/ 폴더 내 .env 파일을 생성해야 함.**
+
+**.env 파일에 메일 전송 관련 필수값 존재(AZURE_CLIENT_SECRET)**
+<br>
+
+**1. 깃허브에서 프로젝트 파일 다운로드**
+
+**(명령프롬프트 실행)**<br>
+**프로젝트를 받을 폴더로 이동**
 ```
 git clone https://github.com/xxeong/sgkimProject.git
 cd ./todo-calendar-backend
@@ -93,8 +116,8 @@ npm start
 ## API명세
 **Swagger API 문서**: http://localhost:8080/swagger-ui.html
 
-**테스트케이스는 rest파일로 작성**
-**sgkimProject/docs 경로의 api.rest**
+**테스트케이스는 rest파일로 작성**<br>
+**sgkimProject/todo-calendar-backend 경로의 api.rest**
 
 
 ---
@@ -218,14 +241,13 @@ npm start
 │   ├── 📂 src/main/resources/
 │   │   ├── 📜 application.properties  # 데이터베이스 및 서버 설정 등
 │   ├── 📂 src/test/java/       # 테스트 코드
+│   ├── 📜 .env                 # 환경변수 관리
 │   ├── 📜 build.gradle         # 백엔드 프로젝트 의존성 목록
 │   ├── 📜 README.md            # 백엔드 설명 문서
 │   ├── 📜 api.rest             # api테스트용 rest파일
 │
 ├── 📂 docs  # 문서화
-│   ├── 📜 API_Specs.md         # API 명세 (Swagger 문서)
-│   ├── 📜 UI_Design.md         # UI 설계 문서
-│   ├── 📜 README.md            # 프로젝트 설명 문서
+│   ├── 📜 DB.sql               # 백엔드 필수 생성 sql
 │
 └── 📜 .gitignore # Git 버전 관리에서 제외할 파일 목록
 └── 📜 README.md  # 최상위 프로젝트 설명 문서

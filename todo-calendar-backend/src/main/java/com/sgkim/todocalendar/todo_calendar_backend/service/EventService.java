@@ -1,6 +1,8 @@
 package com.sgkim.todocalendar.todo_calendar_backend.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
@@ -55,15 +57,18 @@ public class EventService {
         return modelMapper.map(updatedEntity, EventDto.class);
     }
 
-    //사용을 할지 고민...
-    // public EventDto patchEvent(Long id, Map<String, Object> updates) {
-    //     EventEntity event = eventRepository.findById(id)
-    //             .orElseThrow(() -> new RuntimeException("해당 할일이 없습니다. : " + id));
-    //     event.setStatus(updates.get("status").toString());
-    //     EventEntity updatedEntity = eventRepository.save(todo);
-        
-    //     return modelMapper.map(updatedEntity, EventDto.class);
-    // }
+    public EventDto patchEvent(Long id, Map<String, Object> updates) {
+        EventEntity eventEntity = eventRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("해당 일정이 없습니다. : " + id));
+        eventEntity.setTitle(updates.get("title").toString());
+        eventEntity.setDescription(updates.get("description").toString());
+        eventEntity.setStartDateTime(LocalDateTime.parse(updates.get("startDateTime").toString()));
+        eventEntity.setEndDateTime(LocalDateTime.parse(updates.get("endDateTime").toString()));
+        eventEntity.setLocation(updates.get("location").toString());
+
+        EventEntity updatedEntity = eventRepository.save(eventEntity);
+        return modelMapper.map(updatedEntity, EventDto.class);
+    }
 
     public void deleteEvent(Long id) {
         if (!eventRepository.existsById(id)) {

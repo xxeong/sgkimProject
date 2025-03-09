@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL; // 환경 변수 불러오기
-
+const API_BASE_URL = "http://localhost:8080/api";
 const api = axios.create({
   baseURL: API_BASE_URL,
   timeout: 5000, // ⏳ 요청 타임아웃 (5초)

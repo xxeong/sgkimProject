@@ -1,6 +1,7 @@
 package com.sgkim.todocalendar.todo_calendar_backend.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -56,12 +57,12 @@ public class EventBackendController {
     }
 
     // 5. PATCH 요청 → 부분 수정 (상태만 변경) 현재 PATCH를 뭐를 받아서 어떤거만 수정할지 고민...
-    // @Operation(summary = "일정(Event) 부분 수정", description = "ID를 기반으로 특정 일정(Event)의 ***수정합니다.", parameters = {@Parameter(name="status", description = "할 일 상태(예: completed, pending)", example = "pending")})
-    // @PatchMapping("/{id}")
-    // public ResponseEntity<EventDto> patchEvent(@PathVariable Long id, @RequestBody Map<String, Object> updates) {
-    //     EventDto patchTodo = eventService.patchEvent(id, updates);
-    //     return ResponseEntity.ok(patchTodo);
-    // }
+    @Operation(summary = "일정(Event) 부분 수정", description = "ID를 기반으로 특정 일정(Event)을 수정합니다.")
+    @PatchMapping("/{id}")
+    public ResponseEntity<EventDto> patchEvent(@PathVariable Long id, @RequestBody Map<String, Object> updates) {
+        EventDto patchTodo = eventService.patchEvent(id, updates);
+        return ResponseEntity.ok(patchTodo);
+    }
 
     // 6. todo 삭제-delete
     @Operation(summary = "일정(Event) 삭제", description = "ID를 기반으로 특정 일정(Event)을 삭제합니다.")
