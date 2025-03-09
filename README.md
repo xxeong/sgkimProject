@@ -48,15 +48,25 @@ Java-Dotenv             5.2.2 - `.env` 파일을 이용한 환경 변수 관리
 **- Java 17 (Spring Boot 실행을 위해 필요)**<br>
 **- Gradle (Spring Boot 프로젝트 빌드를 위해 필요)**<br>
 **- MySQL 8.0 (데이터베이스 사용을 위해 필요)**<br>
-**- Node.js (React 프로젝트 실행을 위해 필요)**
+**- Node.js (React 프로젝트 실행을 위해 필요)**<br>
+**- git (git clone을 위해 필요)**
 
-### 1. 데이터베이스 (MySQL) 설정<br>
+### 1. git clone
+**1. 깃허브에서 프로젝트 파일 다운로드**
+**프로젝트를 받을 폴더로 이동**
+```
+git clone https://github.com/xxeong/sgkimProject.git
+```
+
+### 2. 데이터베이스 (MySQL) 설정<br>
 
 **(명령 프롬프트 실행)**
 
 **1. MySQL이 설치된 경로로 이동**
 
 ```
+cd c:Program Files\MySQL Server 8.0
+or
 cd c:Program Files\MySQL Server 8.0\bin
 ```
 **(MySQL이 설치된 경로에 따라 다를 수 있음)**<br>
@@ -75,9 +85,7 @@ spring.datasource.url=jdbc:mysql://localhost:3306/planner_db?serverTimezone=Asia
 spring.datasource.username=admin
 spring.datasource.password=qhdkscjfwj1!
 ```
-### 2. 백엔드 
-
-
+### 3. 백엔드 
 **📌 [⚠️ 필수] .env 파일 설정**
 
 **todo-calendar-backend/ 폴더 내 .env 파일을 생성해야 함.**
@@ -85,12 +93,11 @@ spring.datasource.password=qhdkscjfwj1!
 **.env 파일에 메일 전송 관련 필수값 존재(AZURE_CLIENT_SECRET)**
 <br>
 
-**1. 깃허브에서 프로젝트 파일 다운로드**
+
 
 **(명령프롬프트 실행)**<br>
-**프로젝트를 받을 폴더로 이동**
+**1. backend폴더로 이동**
 ```
-git clone https://github.com/xxeong/sgkimProject.git
 cd ./todo-calendar-backend
 ```
 **2. Gradle 빌드**
@@ -103,7 +110,7 @@ gradlew clean build
 cd .\build\libs
 java -jar todo-calendar-backend-0.0.1-SNAPSHOT.jar
 ```
-### 3. 프론트엔드
+### 4. 프론트엔드
 **1. 프론트엔드 폴더로 이동**<br>
 <br>
 
