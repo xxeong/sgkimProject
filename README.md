@@ -23,22 +23,22 @@ React.js(프론트엔드)와 Spring Boot(백엔드)를 사용하여 구현되었
 ## 🛠️ 기술 스택
 ### 🔹 **프론트엔드**
 ```
-React.js	    18.3.1  -	SPA (Single Page Application)
-Ant Design	    5.24.2  -	UI 라이브러리 (디자인 컴포넌트)
-Axios	        1.8.1   -	API 요청 처리 (RESTful API 통신)
-Day.js	        1.11.13 -	날짜 및 시간 처리
+React.js	        18.3.1  -	SPA (Single Page Application)
+Ant Design	        5.24.2  -	UI 라이브러리 (디자인 컴포넌트)
+Axios	                1.8.1   -	API 요청 처리 (RESTful API 통신)
+Day.js	                1.11.13 -	날짜 및 시간 처리
 ```
 ### 🔹 **백엔드**
 ```
 Spring Boot	        3.4.3 -	Java 기반 백엔드 프레임워크
 Spring Web	              -	REST API 개발 지원
-Spring Data JPA	          -	ORM (객체-관계 매핑)
-MySQL	            8.0.33- 관계형 데이터베이스
-Lombok	                  -	코드 간소화 (Getter, Setter 자동 생성)
+Spring Data JPA	              -	ORM (객체-관계 매핑)
+MySQL	                8.0.33- 관계형 데이터베이스
+Lombok	                      -	코드 간소화 (Getter, Setter 자동 생성)
 ModelMapper	        3.1.1 -	DTO ↔ Entity 변환 라이브러리
 SpringDoc OpenAPI	2.7.0 -	Swagger API 문서화
-Spring Boot DevTools	  -	개발 편의성 제공 (자동 리로드)
-Java-Dotenv         5.2.2 - `.env` 파일을 이용한 환경 변수 관리
+Spring Boot DevTools	      -	개발 편의성 제공 (자동 리로드)
+Java-Dotenv             5.2.2 - `.env` 파일을 이용한 환경 변수 관리
 ```
 
 ---
