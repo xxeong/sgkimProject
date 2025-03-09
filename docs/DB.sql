@@ -42,7 +42,7 @@ INSERT INTO todo (id, title, due_date, status) VALUES
 (1, 'React 공부하기', DATE_SUB(CURDATE(), INTERVAL 1 DAY), 'N'),
 (2, 'DB 설계 검토', CURDATE(), 'N'),
 (3, '백엔드 API 구현', DATE_ADD(CURDATE(), INTERVAL 1 DAY), 'N'),
-(4, 'JPA 테스트 코드 작성', DATE_ADD(CURDATE(), INTERVAL 2 DAY), 'Y'),
+(4, 'JPA 테스트 코드 작성', DATE_ADD(CURDATE(), INTERVAL 2 DAY), 'N'),
 (5, 'Ant Design UI 디자인', DATE_SUB(CURDATE(), INTERVAL 3 DAY), 'N');
 
 -- ToDo Descriptions 테이블 생성

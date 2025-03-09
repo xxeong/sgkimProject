@@ -86,9 +86,9 @@ spring.datasource.username=admin
 spring.datasource.password=qhdkscjfwj1!
 ```
 ### 3. 백엔드 
-**📌 [⚠️ 필수] .env 파일 설정**
+**[⚠️ 필수] .env 파일 설정**
 
-**todo-calendar-backend/ 폴더 내 .env 파일을 생성해야 함.**
+📌 `.env` 파일은 **GitHub에서 클론한 `sgkimProject` 폴더의 최상위 위치**에 생성해야 합니다.
 
 **.env 파일에 메일 전송 관련 필수값 존재(AZURE_CLIENT_SECRET)**
 <br>
@@ -132,6 +132,7 @@ npm start
 **Swagger API 문서**: http://localhost:8080/swagger-ui.html
 
 **테스트케이스는 rest파일로 작성**<br>
+**VSCode로 실행 시 "REST Client" Extensions 필요**<br>
 **sgkimProject/todo-calendar-backend 경로의 api.rest**
 
 
